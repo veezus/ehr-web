@@ -1,0 +1,29 @@
+!!!
+%html
+  %head
+    %title ehr-web
+    %script(type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js")
+  %body
+    #ha1c-listings
+
+    :javascript
+      rootElement = document.getElementById('ha1c-listings')
+      axios.get('http://localhost:3000/patients')
+      .then((response) => {
+        response.data.map((patient) => {
+          console.log('patient', patient)
+          axios.get(`http://localhost:3000/patients/${patient.id}/visits`)
+          .then((response) => {
+            rootElement.innerHTML += `<li>${patient.last_name}, ${patient.first_name} - ${response.data[0].ha1c}`
+          })
+          .catch((error) => {
+            console.log('/visits error', error)
+          })
+          .then(() => { console.log(`fetched visits for ${patient.id}`) })
+        })
+      })
+      .catch((error) => {
+        console.log('/patients error', error)
+      })
+      .then(() => { console.log('fetched patients') })
