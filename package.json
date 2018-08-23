@@ -1,0 +1,23 @@
+{
+  "name": "ehr-web",
+  "version": "0.0.1",
+  "description": "Frontend for ehr-api",
+  "main": "index.html",
+  "scripts": {
+    "test": "mocha src/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/veezus/ehr-web.git"
+  },
+  "author": "Veezus Kreist",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/veezus/ehr-web/issues"
+  },
+  "homepage": "https://github.com/veezus/ehr-web#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  }
+}
