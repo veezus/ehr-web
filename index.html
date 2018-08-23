@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ehr-web</title>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js' type='text/javascript'></script>
+<script src='./api.js' type='text/javascript'></script>
+<script src='./formatter.js' type='text/javascript'></script>
+<script src='./patient.js' type='text/javascript'></script>
+</head>
+<body>
+<div id='ha1c-listings'></div>
+<script>
+  rootElement = document.getElementById('ha1c-listings')
+  
+  document.addEventListener('DOMContentLoaded', (event) => {
+    api = new Api(rootElement)
+    formatter = new Formatter(rootElement)
+  })
+  
+  rootElement.addEventListener('PatientsGraphFetched', (event) => {
+    formatter.printHa1csFor(api.patients)
+  })
+</script>
+</body>
+</html>

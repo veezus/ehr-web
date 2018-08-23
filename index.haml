@@ -1,0 +1,23 @@
+!!!
+%html
+  %head
+    %title ehr-web
+    %script(type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js")
+    %script(type="text/javascript" src="./api.js")
+    %script(type="text/javascript" src="./formatter.js")
+    %script(type="text/javascript" src="./patient.js")
+  %body
+    #ha1c-listings
+
+    :javascript
+      rootElement = document.getElementById('ha1c-listings')
+
+      document.addEventListener('DOMContentLoaded', (event) => {
+        api = new Api(rootElement)
+        formatter = new Formatter(rootElement)
+      })
+
+      rootElement.addEventListener('PatientsGraphFetched', (event) => {
+        formatter.printHa1csFor(api.patients)
+      })
