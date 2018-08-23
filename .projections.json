@@ -1,0 +1,15 @@
+{
+  "src/*.js": {
+    "type": "javascript",
+    "alternate": "src/{}.test.js"
+  },
+  "src/*.test.js": {
+    "type": "test"
+  },
+  "index.haml": {
+    "type": "index"
+  },
+  "package.json": {
+    "type": "package"
+  }
+}
