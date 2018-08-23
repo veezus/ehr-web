@@ -7,7 +7,7 @@ class Formatter {
     this.node.innerHTML = '<ul>'
     patients.map((patient) => {
       this.node.innerHTML +=
-        `<li>${patient.lastFirst()} - ${patient.latestVisit().ha1c}</li>`
+        `<li>${patient.lastFirst()} - ${patient.average('ha1c')}</li>`
     })
     this.node.innerHTML += '</ul>'
   }
