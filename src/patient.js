@@ -16,3 +16,5 @@ class Patient {
     return total / this.visits.length
   }
 }
+
+if (typeof module !== 'undefined') module.exports = Patient;
