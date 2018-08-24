@@ -17,4 +17,4 @@ class Patient {
   }
 }
 
-if (typeof module !== 'undefined') module.exports = Patient;
+if (typeof module !== 'undefined') module.exports = Patient
